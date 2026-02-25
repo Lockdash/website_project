@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Main</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="scripts/script.js"></script>
+    <script src="https://kit.fontawesome.com/d130042e39.js" crossorigin="anonymous"></script>
+  </head>
+
+  <header>
+    <div class="left_header">
+      <div class="logo_name">
+        <img src="assets/log0.png" alt="logo">
+        <h1>Book Haven Store</h1>
+      </div>
+    </div>
+    <div class="page_name"></div>
+     <h2>Home page</h2>
+    </div>
+    <nav>
+      <div class='nav_list'>
+          <ul>
+            <div class="marker">You are currently on </div>
+            <li> <a href="index.html">Main</a> </li>
+            <li> <a href="gallery.html">Gallery </a> </li>
+            <li> <a href="about_us.html">About us </a> </li>
+            <li> <a href="events.html"> Events </a> </li>
+          </ul>
+      </div>
+      <div class='burger_menu'>
+        <svg xmlns="http://www.w3.org/2000/svg" height="2.0em" viewBox="0 0 448 512"><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32
+          32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7
+          0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg>
+          <ul class="burger_menu_links">
+            <div class="marker">You are currently on </div>
+            <li> <a href="index.html">Main</a> </li>
+            <li> <a href="gallery.html">Gallery </a> </li>
+            <li> <a href="about_us.html">About us </a> </li>
+            <li> <a href="events.html"> Events </a> </li>
+          </ul>
+      </div>
+    </nav>
+  
+
+
+    <div class="search_bar">
+      <form >
+        <input type="text" placeholder="Search..." aria-label="Input to search through the site">
+        <button type="submit" aria-label="Start the search">Go</button>
+      </form>
+    </div>
+ </header>
+
+  <body>
+    <div class="upper_section">
+      <div class="index_news" style="margin: 15px"> 
+        <h2 style="margin: 10px">Our News</h2> 
+        <div class="subtitle" style="margin: 10px" ><h5> Let us tell you what's happened in the past several weeks... </h5></div>
+        <p> Welcome to Our News. This is the central page for updates, announcements, and glimpses into the life of our bookstore community. We are always evolving, and this space is dedicated to sharing that journey with you.<br><br>
+
+          Here, you'll find information about our upcoming events, such as the launch of our Summer Book Camp for young readers, where weekly themes transform reading into an adventure. As the seasons change, look forward to details on our annual Spooky Halloween Spectacular, featuring curated horror displays and eerie story readings.<br><br>
+          
+          We also shine a light on unique cultural experiences, like our upcoming collaborative concert, "An Evening with Beethoven," blending live classical music with literary biography. For our regular community, we post the monthly selections and meeting details for our Book Club, your invitation to deeper discussion and connection.<br><br>
+          
+          Beyond events, we share curated reading lists, highlight new arrivals, and offer behind-the-scenes notes on our seasonal shop transformations. Check back often to stay connected with our story. The next chapter is always being written, and we're glad you're here to read it with us.
+        </p>
+      </div> 
+
+      <div class="new_arrivals">
+        <div class="title" style="margin: 15px">
+          <h2>Just arrived!</h2>
+        </div>
+        <div class="item">     
+          <img src="assets/Client3_Book1.png" alt="item"><br>
+          <button type="submit" class="order_button" id="add_cart" aria-label="Order the newly arrived book">Order now</button></div>
+      </div>  
+    </div>
+
+ 
+      <h2 style="text-align: center; padding: 0px 10px 25px;">Why choose us?</h2>
+      <div class="perks">
+        <div class="perk">
+          <h3>A Sanctuary for Discovery</h3>
+        </div>
+        <div class="perk">
+          <h3>Passionate, Human Guidance</h3>
+        </div>
+        <div class="perk">
+          <h3>A Vibrant Cultural Hub</h3>
+        </div>
+      </div>
+
+
+
+    
+
+    <section>
+      <h2 style="text-align: center; padding: 0px 10px 25px;">Shop by Category</h2>
+      <div class="categories">
+        <div class="category">
+          <img src="assets/category.png" alt="category">
+          <h3>Fiction</h3>
+        </div>
+        <div class="category">
+          <img src="assets/category.png" alt="category">
+          <h3>Non-fiction</h3>
+        </div>
+        <div class="category">
+          <img src="assets/category.png" alt="category">
+          <h3>Magazines</h3>
+        </div>
+        <div class="category">
+          <img src="assets/category.png" alt="category">
+          <h3>Comics</h3>
+        </div>
+        <div class="category">
+          <img src="assets/category.png" alt="category">
+          <h3>Stationery</h3>
+        </div>
+        <div class="category">
+          <img src="assets/category.png" alt="category">
+          <h3>Merch</h3>
+        </div>
+      </div>
+    </section>
+  </body>
+
+  <footer>
+      <div id="lettersub">
+        <h5 style="padding: 0px 10px 10px;">Subscribe for more books!</h5> 
+        <form action="" method="POST" id="subscribe">
+          <label>Your e-mail <br>
+            <input type="email" placeholder="E-mail" aria-label="Input e-mail for the newsletter subscription" required> <br>
+            <button type="submit" id="subButton" style="margin: 10px" onclick="subscribe()" aria-label="Press to subscribe for the newsletter">Submit</button>
+          </label> 
+        </form>
+      </div>
+
+      <div class="soc_media">
+        <h5>
+          Follow us!
+        </h5> </br>
+        <i class="fa-brands fa-twitter"></i>
+        <i class="fa-brands fa-instagram"></i>
+        <i class="fa-brands fa-facebook"></i>
+        <i class="fa-brands fa-youtube"></i>
+
+      </div>
+
+      <div class="footerlinks">
+        <h5 style="padding: 0px 10px 10px;">
+          Quick Links
+        </h5>
+        <a href="index.html">Main</a> 
+        <a href="about_us.html">About us</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="events.html">Events</a>   
+      </div>
+  </footer>
+</html>

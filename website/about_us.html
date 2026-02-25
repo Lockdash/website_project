@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>About us</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="scripts/script3.js"></script>
+    <script src="https://kit.fontawesome.com/d130042e39.js" crossorigin="anonymous"></script>
+  </head>
+  <header>
+    <div class="left_header">
+      <div class="logo_name">
+        <img src="assets/log0.png" alt="logo">
+        <h1>Book Haven Store</h1>
+      </div>
+    </div>
+    <div class="page_name"></div>
+     <h2>About us</h2>
+    </div>
+    <nav>
+      <div class='nav_list'>
+          <ul>
+            <div class="marker">You are currently on </div>
+            <li> <a href="index.html">Main</a> </li>
+            <li> <a href="gallery.html">Gallery </a> </li>
+            <li> <a href="about_us.html">About us </a> </li>
+            <li> <a href="events.html"> Events </a> </li>
+          </ul>
+      </div>
+      <div class='burger_menu'>
+        <svg xmlns="http://www.w3.org/2000/svg" height="2.0em" viewBox="0 0 448 512"><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32
+          32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7
+          0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg>
+          <ul class="burger_menu_links">
+            <div class="marker">You are currently on </div>
+            <li> <a href="index.html">Main</a> </li>
+            <li> <a href="gallery.html">Gallery </a> </li>
+            <li> <a href="about_us.html">About us </a> </li>
+            <li> <a href="events.html"> Events </a> </li>
+          </ul>
+      </div>
+    </nav>
+
+    <div class="search_bar">
+      <form >
+        <input type="text" aria-label="Input to search through the site" placeholder="Search...">
+        <button type="submit" aria-label="Start the search">Go</button>
+      </form>
+    </div>
+  </header>
+  <body>
+    <img style="padding: 20px 10px 25px" src="assets/about_us.jpg" alt="placeholder">
+    <h2 style="text-align: center; padding: 0px 10px 25px;">Our mission</h2>
+    <p>We exist in the space between the first page and the last, in the quiet hum of a turning page and the shared thrill of a discovered story. More than a retailer, we are a living intersection—a curated ecosystem where timeless narratives meet contemporary curiosity. Our philosophy is built not on algorithms, but on the human hand and heart; our shelves are conversations waiting to happen, carefully composed of voices both canonical and emerging, familiar and challenging.<br><br>
+
+    We believe a book is a catalyst. It is an object of art, a vessel for ideas, and an invitation to connection—with oneself, with others, and with the vast, intricate world. Our mission is to foster these encounters. Through our doors, you enter a sanctuary designed for browsing and belonging, where our passionate team serves as your literary guide. Beyond commerce, we are a cultural hearth, hosting dialogues, celebrations, and quiet moments of respite that anchor us to the enduring power of the written word. We are not just a place you buy a book; we are where your next perspective finds you.</p>
+
+    <h2 style="padding: 15px 10px 25px;">Our working hours</h2>
+      <table style="text-align: center; padding: 15px 10px 25px; border: double">
+        <tr>
+          <th>Days</th>
+          <th>Open</th>
+          <th>Closed</th>
+        </tr>
+        <tr style="text-align: center; padding: 5px">
+          <th>Mon-Sat</th> <th>9AM</th><th>8PM</th>
+        </tr>
+        <tr style="text-align: center; padding: 5px">
+          <th>Sun</th> <th>11AM</th> <th>6PM</th>
+        </tr>
+      </table>
+
+    <h3 style="padding: 15px 10px 25px;">Got questions? Contact us!</h3>
+    <div class="contact_form">
+      <form autocomplete="on" method="POST" id="contactus">
+        <label>Your name 
+          <input type="text" required name="cusname" id="cusname"  aria-label="Input your name to place a custom order">
+        </label><br> <br>
+        <label>Your e-mail 
+          <input type="email" name="cusmail" id="cusmail" aria-label="Input e-mail to place a custom order" required> 
+        </label><br> <br>
+        <label>Your message 
+            <textarea name="cusmessage" id="cusmessage" cols="25" rows="5" required aria-label="Input a message to place a custom order"></textarea>
+        </label><br> <br>
+        <label for="custom order">Custom order</label> 
+        <input type="checkbox" name="custom order" id="cusorder"> <br> <br>
+        <button type="submit" onClick="submitForm()" class="message_button" id="message_button" aria-label="Press to send us a message">Send us a message</button>
+        <input type="reset" value="Clear" aria-label="Press to clear the form">  <br>
+      </form>
+    </div>
+
+  </body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <footer>
+    <div id="lettersub">
+      <h5 style="padding: 0px 10px 10px;">Subscribe for more books!</h5> 
+      <form action="" method="POST" id="subscribe">
+        <label>Your e-mail <br>
+          <input type="email" placeholder="E-mail" aria-label="Input e-mail for the newsletter subscription" required> <br>
+          <button type="submit" id="subButton" style="margin: 10px" onclick="alert('Thank for the subscription!')" aria-label="Press to subscribe for the newsletter">Submit</button>
+        </label> 
+      </form>
+    </div>
+
+    <div class="soc_media">
+      <h5>
+        Follow us!
+      </h5> </br>
+      <i class="fa-brands fa-twitter"></i>
+      <i class="fa-brands fa-instagram"></i>
+      <i class="fa-brands fa-facebook"></i>
+      <i class="fa-brands fa-youtube"></i>
+
+    </div>
+
+    <div class="footerlinks">
+      <h5 style="padding: 0px 10px 10px;">
+        Quick Links
+      </h5>
+      <a href="index.html">Main</a> 
+      <a href="about_us.html">About us</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="events.html">Events</a>   
+    </div>
+</footer>
+
+ 
+</html>
