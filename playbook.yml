@@ -1,0 +1,98 @@
+---
+
+- name: Prepare webserver
+  hosts: webserver
+  become: true
+  tasks:
+    - name: Update apt cache
+      ansible.builtin.apt:
+        update_cache: yes
+
+    - name: Install Docker dependencies
+      ansible.builtin.package:
+        name:
+          - bc
+          - curl
+          - expect
+          - git
+          - ca-certificates
+        state: present
+
+    - name: Create Docker GPG key directory
+      ansible.builtin.file:
+        path: /etc/apt/keyrings
+        state: directory
+        mode: "0755"
+
+    - name: Download Docker GPG key
+      ansible.builtin.get_url:
+        url: https://download.docker.com/linux/ubuntu/gpg
+        dest: /etc/apt/keyrings/docker.asc
+        mode: "0644"
+
+    - name: Add Docker repository
+      ansible.builtin.apt_repository:
+        repo: "deb [arch=amd64 signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu {{ ansible_distribution_release }} stable"
+        state: present
+        filename: docker
+
+    - name: Update cache
+      ansible.builtin.package:
+        update_cache: yes
+
+    - name: Install Docker and Docker Compose
+      ansible.builtin.package:
+        name:
+          - docker-ce
+          - docker-ce-cli
+          - containerd.io
+          - docker-buildx-plugin
+          - docker-compose-plugin
+        state: present
+
+    - name: Ensure Docker is enabled and started
+      ansible.builtin.service:
+        name: docker
+        state: started
+        enabled: yes
+
+    - name: Mount folder creation
+      ansible.builtin.file:
+        path: /var/www/html
+        state: directory
+        mode: "0755"
+        owner: root
+        group: root
+
+    - name: Check source folder /var/www
+      stat:
+        path: "/var/www/html"
+      register: folder_check
+
+    - name: If source folder not exists
+      fail:
+        msg: "The /var/www/html directory is missing"
+      when: not folder_check.stat.exists
+
+- name: Deploy website
+  hosts: webserver
+  become: true
+  tasks: 
+
+    - name: Clone repository
+      ansible.builtin.git:
+        repo: "https://github.com/Lockdash/website_project.git"
+        dest: /opt/website
+        update: yes
+
+    - name: Copy files to the mount folder
+      ansible.builtin.copy:
+        src: /opt/website/website/
+        dest: /var/www/html/
+        remote_src: yes
+
+    - name: Run docker-compose.yml
+      ansible.builtin.shell:
+        cmd: docker compose up -d
+        chdir: /opt/website
+ 
