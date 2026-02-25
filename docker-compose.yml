@@ -1,7 +1,7 @@
 version: "3"
 services:
     website:
-        build: /home/deshaan/dockerlab
+        build: /opt/website
         ports:
             - "80:80"
         volumes:
