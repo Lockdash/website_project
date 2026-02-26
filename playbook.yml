@@ -1,6 +1,7 @@
 ---
 
 - name: Prepare webserver
+  hosts: all
   become: true
   tasks:
     - name: Update apt cache
@@ -74,6 +75,7 @@
       when: not folder_check.stat.exists
 
 - name: Deploy website
+  hosts: all
   become: true
   tasks: 
 
